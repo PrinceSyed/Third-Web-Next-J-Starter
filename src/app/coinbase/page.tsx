@@ -22,7 +22,7 @@ const Coinbase = () => {
     const { data: nft, isLoading: nftIsLoading } = useReadContract(
         getNFT, {
             contract: contract,
-            tokenId: 0n
+            tokenId: BigInt(0)
         }
     );
 
@@ -31,7 +31,7 @@ const Coinbase = () => {
         balanceOf, {
             contract: contract,
             owner: account?.address || "",
-            tokenId: 0n
+            tokenId: BigInt(0)
         }
     );
 
@@ -63,7 +63,7 @@ const Coinbase = () => {
                                     claimTo({
                                         contract: contract,
                                         to: account.address,
-                                        tokenId: 0n,
+                                        tokenId: BigInt(0),
                                         quantity: 1n
                                     })
                                 }
